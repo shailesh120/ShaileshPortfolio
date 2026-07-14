@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Salesforce administrator & developer and full-stack engineer — Apex, Lightning Web Components, Python, and integrations. Portfolio of CRM, analytics, and automation projects." />
+<!-- Social share preview (shows a clean card when the link is pasted into LinkedIn / iMessage / Slack) -->
+<meta property="og:title" content="Shailesh Alagan — Salesforce Developer & Full-Stack Engineer" />
+<meta property="og:description" content="Salesforce administrator and developer with a full-stack background — CRM, analytics, and automation. 5+ years, 12 projects." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="photo.jpg" />
+<!-- After deploying, make og:image an ABSOLUTE URL (LinkedIn requires it), e.g. https://yourdomain.com/photo.jpg, and add <meta property="og:url" content="https://yourdomain.com/"> -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shailesh Alagan — Salesforce Developer & Full-Stack Engineer" />
+<meta name="twitter:description" content="Salesforce administrator and developer — CRM, analytics, and automation." />
+<meta name="twitter:image" content="photo.jpg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23b5701f'/><text x='32' y='45' font-family='Georgia,serif' font-size='34' font-style='italic' fill='%23ffffff' text-anchor='middle'>SA</text></svg>" />
+<title>Shailesh Alagan — Portfolio</title>
+<!--
+  ============================================================
+  Shailesh Alagan — portfolio. Single self-contained file, no build step.
+  Deploy anywhere static (GitHub Pages, Netlify, your own domain).
+
+  ADD A PROJECT: copy any <article class="proj"> ... </article> block,
+  set its data-num + the visible number, and edit the text.
+  Optional: add a LinkedIn URL in the hero/contact if you create one.
+  ============================================================
+-->
+<style>
+  /* ============ Theme tokens (warm editorial) ============ */
+  :root {
+    --bg: #faf8f4;
+    --bg-elev: #ffffff;
+    --bg-sunken: #f1ede5;
+    --text: #1a1712;
+    --text-muted: #6b6459;
+    --text-faint: #a49a89;
+    --border: #e7e1d6;
+    --border-strong: #d6cebf;
+    --accent: #b5701f;
+    --accent-soft: rgba(181,112,31,0.10);
+    --ghost: rgba(26,23,18,0.05);
+    --badge-live-bg: #e8efe6; --badge-live-text: #3f6b3a;
+    --badge-prog-bg: #f6ecd7; --badge-prog-text: #8a5c14;
+    --badge-proto-bg: #efeae1; --badge-proto-text: #6b6459;
+    --shadow: 0 1px 2px rgba(40,30,15,0.05), 0 10px 34px rgba(40,30,15,0.06);
+    --mono: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme]) { color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #14120f;
+    --bg-elev: #1c1915;
+    --bg-sunken: #100e0b;
+    --text: #eeeae2;
+    --text-muted: #a49c8e;
+    --text-faint: #6f685b;
+    --border: #2a2620;
+    --border-strong: #38332b;
+    --accent: #e0a35c;
+    --accent-soft: rgba(224,163,92,0.13);
+    --ghost: rgba(238,234,226,0.055);
+    --badge-live-bg: #17271a; --badge-live-text: #7cbe77;
+    --badge-prog-bg: #2c2411; --badge-prog-text: #e0b467;
+    --badge-proto-bg: #221e18; --badge-proto-text: #a49c8e;
+    --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 12px 40px rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); line-height: 1.65; letter-spacing: -0.003em;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent-soft); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+
+  /* ============ Header ============ */
+  header.site {
+    position: sticky; top: 0; z-index: 30;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: saturate(150%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; max-width: 1040px; margin: 0 auto; padding: 0 32px;
+  }
+  .brand { font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
+  .brand b { color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .nav { display: flex; gap: 22px; }
+  .nav a { font-family: var(--mono); font-size: 12.5px; color: var(--text-muted); letter-spacing: 0.01em; }
+  .nav a:hover { color: var(--accent); text-decoration: none; }
+  .theme-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    background: var(--bg-elev); border: 1px solid var(--border);
+    color: var(--text-muted); font-size: 15px; transition: border-color .15s, color .15s;
+  }
+  .theme-btn:hover { border-color: var(--border-strong); color: var(--accent); }
+
+  /* ============ Eyebrow / section labels ============ */
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
+    color: var(--text-faint); text-transform: uppercase; margin: 0 0 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow .num { color: var(--accent); }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+  /* ============ Hero ============ */
+  .hero {
+    position: relative; padding: 92px 0 56px; overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background-image: radial-gradient(var(--ghost) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr 260px; gap: 48px; align-items: center; }
+  .hero-text { min-width: 0; }
+  .hero-photo {
+    position: relative; width: 260px; height: 320px; border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--border); background: var(--bg-sunken); box-shadow: var(--shadow);
+    justify-self: end;
+  }
+  .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic; font-size: 76px; color: var(--text-faint);
+  }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono);
+    font-size: 12.5px; color: var(--text-muted); margin-bottom: 22px;
+    padding: 6px 12px; border: 1px solid var(--border); border-radius: 30px;
+    background: var(--bg-elev);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #4caf6d; box-shadow: 0 0 0 3px rgba(76,175,109,.18); }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(40px, 8vw, 76px); line-height: 1.02;
+    letter-spacing: -0.02em; margin: 0 0 18px;
+  }
+  .hero h1 .accent { color: var(--accent); font-style: italic; }
+  .hero .role-line {
+    font-family: var(--mono); font-size: clamp(14px, 2vw, 16px); letter-spacing: 0.02em;
+    color: var(--accent); margin: 0 0 20px; font-weight: 500;
+  }
+  .hero .tagline {
+    font-size: clamp(18px, 2.6vw, 23px); color: var(--text); font-weight: 500;
+    max-width: none; margin: 0 0 22px; line-height: 1.25;
+  }
+  .hero .bio { font-size: 17px; color: var(--text-muted); max-width: none; margin: 0; line-height: 1.7; text-align: justify; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .meta-pill {
+    font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+    background: var(--bg-sunken); border: 1px solid var(--border);
+    padding: 6px 11px; border-radius: 7px;
+  }
+  .meta-pill b { color: var(--accent); font-weight: 600; }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
+    padding: 11px 18px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--bg-elev); color: var(--text);
+    transition: border-color .15s, transform .05s, background .15s;
+  }
+  .cta:hover { border-color: var(--accent); text-decoration: none; }
+  .cta:active { transform: translateY(1px); }
+  .cta.primary { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .cta.primary:hover { filter: brightness(1.08); border-color: var(--text); }
+
+  /* ============ Sections ============ */
+  .section { padding: 46px 0; }
+
+  /* About / capabilities */
+  .about-copy p { font-size: 17px; color: var(--text-muted); max-width: none; margin: 0 0 18px; line-height: 1.72; text-align: justify; }
+  .about-copy p b { color: var(--text); font-weight: 600; }
+  .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 30px; }
+  .cap {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px;
+    transition: border-color .18s, transform .18s;
+  }
+  .cap:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+  .cap .ic { font-family: var(--mono); color: var(--accent); font-size: 13px; margin-bottom: 10px; }
+  .cap h4 { margin: 0 0 5px; font-size: 15.5px; }
+  .cap p { margin: 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.55; }
+  .certs { margin-top: 30px; }
+  .certs-label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-faint); margin: 0 0 14px; }
+  .cert-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 11px; }
+  .cert-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--text); line-height: 1.4; }
+  .cert-list .cert-logo { width: 19px; height: 19px; flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+  .cert-sub { color: var(--text-faint); font-size: 12.5px; }
+  .cert-list a.cert-link { color: var(--text); text-decoration: none; }
+  .cert-list a.cert-link:hover { color: var(--accent); }
+  .cert-list a.cert-link .view { font-family: var(--mono); font-size: 11px; color: var(--accent); opacity: .6; margin-left: 6px; white-space: nowrap; transition: opacity .15s; }
+  .cert-list a.cert-link:hover .view { opacity: 1; }
+  .doc-link { font-family: var(--mono); font-size: 11.5px; color: var(--accent); white-space: nowrap; }
+  .doc-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Experience */
+  .xp { border-left: 2px solid var(--border); padding-left: 24px; margin-left: 4px; }
+  .xp-item { position: relative; padding-bottom: 26px; }
+  .xp-item::before {
+    content: ""; position: absolute; left: -31px; top: 6px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
+  }
+  .xp-item:last-child { padding-bottom: 0; }
+  .xp-role { font-size: 17px; font-weight: 600; margin: 0; }
+  .xp-meta { font-family: var(--mono); font-size: 12.5px; color: var(--text-faint); margin: 3px 0 8px; }
+  .xp-item ul { margin: 0; padding-left: 18px; }
+  .xp-item li { color: var(--text-muted); font-size: 14.5px; margin: 4px 0; }
+  .xp-item .tags { margin-top: 12px; }
+
+  /* Stats band */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--bg-elev); box-shadow: var(--shadow); }
+  .stat { padding: 24px 18px; text-align: center; border-right: 1px solid var(--border); }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-family: var(--serif); font-size: clamp(30px, 4.5vw, 42px); color: var(--accent); line-height: 1; }
+  .stat .lbl { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-top: 9px; text-transform: uppercase; letter-spacing: 0.04em; }
+  @media (max-width: 620px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
+  }
+
+  /* Logo wall */
+  .logos { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .logo { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-elev); font-family: var(--mono); font-size: 12.5px; color: var(--text-muted); transition: border-color .15s, color .15s; }
+  .logo:hover { border-color: var(--accent); color: var(--text); }
+  .logo svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+
+  /* ============ Projects ============ */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .filter {
+    font-family: var(--mono); font-size: 12.5px; cursor: pointer;
+    background: var(--bg-elev); color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: 30px; padding: 7px 15px;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+  .filter:hover { border-color: var(--border-strong); color: var(--text); }
+  .filter.is-active { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .filter .fcount { opacity: .55; margin-left: 3px; }
+  .show-more {
+    display: block; margin: 26px auto 0; font-family: var(--mono); font-size: 13px; cursor: pointer;
+    background: var(--bg-elev); color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: 10px; padding: 11px 22px;
+    transition: border-color .15s, color .15s;
+  }
+  .show-more:hover { border-color: var(--accent); color: var(--accent); }
+  .proj {
+    display: grid; grid-template-columns: 54px 1fr; gap: 4px;
+    padding: 30px 0; border-top: 1px solid var(--border); position: relative;
+  }
+  .proj:first-of-type { border-top: none; }
+  .proj-num {
+    font-family: var(--serif); font-size: 20px; color: var(--text-faint);
+    font-style: italic; padding-top: 2px;
+  }
+  .proj-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+  .proj h3 {
+    font-family: var(--serif); font-weight: 600; font-size: clamp(21px, 3vw, 27px);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.15;
+  }
+  .badge {
+    font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 20px; white-space: nowrap;
+  }
+  .badge.live { background: var(--badge-live-bg); color: var(--badge-live-text); }
+  .badge.progress { background: var(--badge-prog-bg); color: var(--badge-prog-text); }
+  .badge.proto { background: var(--badge-proto-bg); color: var(--badge-proto-text); }
+  .scope { color: var(--text-muted); margin: 12px 0 14px; font-size: 16px; max-width: 62ch; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    font-family: var(--mono); font-size: 11.5px; color: var(--text-muted);
+    padding: 4px 9px; border: 1px solid var(--border); border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .proj:hover .tag { border-color: var(--border-strong); }
+  .tag.key { color: var(--accent); border-color: var(--accent-soft); background: var(--accent-soft); }
+
+  details.tech { margin-top: 15px; }
+  details.tech > summary {
+    list-style: none; cursor: pointer; user-select: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--accent);
+    padding: 7px 0;
+  }
+  details.tech > summary::-webkit-details-marker { display: none; }
+  details.tech > summary .arrow { transition: transform .2s; font-size: 10px; }
+  details.tech[open] > summary .arrow { transform: rotate(90deg); }
+  details.tech > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .tech-body {
+    padding: 10px 0 4px; margin-top: 6px;
+    border-top: 1px dashed var(--border);
+  }
+  .tech-body h5 {
+    font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--text-faint); margin: 18px 0 8px; font-weight: 600;
+  }
+  .tech-body h5:first-child { margin-top: 10px; }
+  .tech-body ul { margin: 0; padding-left: 18px; }
+  .tech-body li { margin: 6px 0; color: var(--text); font-size: 14.5px; }
+  .tech-body li b { font-weight: 600; }
+  .note { color: var(--text-faint); font-size: 13px; margin-top: 14px; font-style: italic; }
+  code {
+    font-family: var(--mono); font-size: 12.5px; background: var(--bg-sunken);
+    padding: 1px 5px; border-radius: 4px; color: var(--text); border: 1px solid var(--border);
+  }
+
+  /* ============ Toolbox (tech stack) ============ */
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .tool-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 17px 18px; }
+  .tool-card h4 { font-family: var(--mono); font-size: 12px; color: var(--accent); margin: 0 0 12px; letter-spacing: 0.02em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-family: var(--mono); font-size: 12px; line-height: 1; background: var(--bg-sunken); color: var(--text-muted); padding: 6px 9px; border-radius: 6px; }
+
+  /* ============ Contact ============ */
+  .contact-card {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px;
+    padding: 40px 34px; box-shadow: var(--shadow); text-align: center;
+  }
+  .contact-card h3 { font-family: var(--serif); font-size: clamp(26px, 4vw, 38px); margin: 0 0 8px; letter-spacing: -0.01em; }
+  .contact-card p { margin: 0 auto; color: var(--text-muted); max-width: 46ch; }
+  .contact-card .cta-row { justify-content: center; }
+
+  footer.site { padding: 34px 0 60px; border-top: 1px solid var(--border); margin-top: 20px; }
+  footer.site .fi { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 12px; color: var(--text-faint); }
+
+  /* ============ Reveal animation ============ */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* Project screenshots */
+  .proj-shot { display: block; width: 100%; max-width: 600px; margin: 16px 0 2px; border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); }
+  .shot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    max-width: 760px;
+    margin: 16px 0 4px;
+  }
+  .shot {
+    margin: 0;
+    min-width: 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background: var(--bg-sunken);
+  }
+  .shot figcaption {
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+  .tech-body img,
+  .hero-photo img {
+    cursor: zoom-in;
+  }
+  body.modal-open {
+    overflow: hidden;
+  }
+  .image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: rgba(4, 4, 3, 0.84);
+    backdrop-filter: blur(10px);
+  }
+  .image-modal.is-open {
+    display: flex;
+  }
+  .modal-frame {
+    margin: 0;
+    width: min(1120px, 100%);
+    max-height: 92vh;
+    display: grid;
+    gap: 10px;
+  }
+  .modal-frame img {
+    display: block;
+    max-width: 100%;
+    max-height: 84vh;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    box-shadow: 0 26px 80px rgba(0,0,0,0.55);
+    background: #080806;
+    object-fit: contain;
+  }
+  .modal-frame figcaption {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: rgba(255,255,255,0.74);
+  }
+  .modal-close {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 121;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 50%;
+    background: rgba(20,20,17,0.82);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .modal-close:hover,
+  .modal-close:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+  /* Scroll progress bar */
+  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 40; }
+  /* Back-to-top button */
+  .to-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 40; width: 44px; height: 44px;
+    border-radius: 50%; border: 1px solid var(--border); background: var(--bg-elev);
+    color: var(--text-muted); cursor: pointer; opacity: 0; pointer-events: none;
+    transition: opacity .25s, border-color .15s, color .15s; box-shadow: var(--shadow); font-size: 18px; line-height: 1;
+  }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  .to-top:hover { border-color: var(--accent); color: var(--accent); }
+  /* Active nav link */
+  .nav a.active { color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-photo { justify-self: start; width: 190px; height: 230px; order: -1; }
+  }
+  @media (max-width: 620px) {
+    .nav { display: none; }
+    .hero { padding: 60px 0 34px; }
+    .proj { grid-template-columns: 1fr; }
+    .proj-num { display: none; }
+  }
+
+  /* ============ Print / PDF ============ */
+  @media print {
+    :root { --bg:#fff; --bg-elev:#fff; --bg-sunken:#f4f4f4; --text:#111; --text-muted:#333; --text-faint:#666; --border:#ccc; --accent:#8a5410; --shadow:none; --ghost:transparent; }
+    header.site, .theme-btn, .cta-row, .status, .progress, .to-top { display: none !important; }
+    body { background: #fff; }
+    .hero::before { display: none; }
+    .proj, .tool-card, .cap, .contact-card { break-inside: avoid; box-shadow: none; }
+    .tech-body { display: block !important; }
+    a { color: var(--text); text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-inner">
+    <div class="brand"><b>&gt;</b> Shailesh Alagan</div>
+    <div class="nav-right">
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#experience">experience</a>
+        <a href="#education">education</a>
+        <a href="#toolbox">toolbox</a>
+        <a href="#contact">contact</a>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle color theme"><span id="themeIcon">◐</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== HERO / INTRO ===================== -->
+  <section class="hero">
+    <div class="hero-grid">
+    <div class="hero-text">
+    <span class="status"><span class="dot"></span> Available for new opportunities</span>
+    <h1>Shailesh <span class="accent">Alagan</span></h1>
+    <p class="role-line">// Salesforce Administrator · Developer · Full-Stack Engineer</p>
+    <p class="tagline">5+ years designing and building scalable business applications, CRM solutions, and workflow automation.</p>
+    <p class="bio">
+      I'm a Salesforce administrator and developer with a full-stack engineering background,
+      specializing in Salesforce administration, custom CRM, analytics, and business automation.
+      I own the full delivery lifecycle — from
+      <b style="color:var(--text)">data modeling</b> and <b style="color:var(--text)">Apex</b> to
+      <b style="color:var(--text)">Lightning Web Components</b> and system integrations — with a
+      focus on reliability, scalability, and clean, maintainable architecture.
+    </p>
+    <div class="meta-row">
+      <span class="meta-pill"><b>5+</b> yrs across the stack</span>
+      <span class="meta-pill">Salesforce · Apex · Python</span>
+      <span class="meta-pill">Salesforce Certified Admin</span>
+      <span class="meta-pill">Client &amp; executive facing</span>
+      <span class="meta-pill">Chatsworth, CA</span>
+    </div>
+    <div class="cta-row">
+      <a class="cta primary" href="#work">View my work</a>
+      <a class="cta" href="Shailesh_Alagan_Resume_Job.pdf" target="_blank" rel="noopener">Résumé ↓</a>
+      <a class="cta" href="mailto:s.alagan@outlook.com">Get in touch</a>
+    </div>
+    </div><!-- /hero-text -->
+    <div class="hero-photo">
+      <!-- Add your photo: save it next to index.html as "photo.jpg" (a square or portrait crop works best) -->
+      <span class="photo-fallback">SA</span>
+      <img src="photo.jpg" alt="Shailesh Alagan" onerror="this.remove()" />
+    </div>
+    </div><!-- /hero-grid -->
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <div class="stats">
+    <div class="stat"><div class="num">5+</div><div class="lbl">Years experience</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">Projects shipped</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">Industries served</div></div>
+    <div class="stat"><div class="num">11</div><div class="lbl">Certifications</div></div>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <p class="eyebrow"><span class="num">01</span> / about</p>
+    <div class="about-copy">
+      <p>
+        <b>Salesforce Developer and Full-Stack Software Engineer</b> with 5+ years of experience
+        designing and building scalable business applications, CRM solutions, and workflow
+        automation. Experienced in <b>Apex</b>, <b>Lightning Web Components (LWC)</b>, <b>React.js</b>,
+        <b>Python</b>, <b>Firebase</b>, and <b>Salesforce administration</b>, with a strong background
+        in developing custom software from the ground up.
+      </p>
+      <p>
+        Passionate about solving complex business problems through automation, AI, and modern
+        web technologies. I enjoy partnering directly with stakeholders — from CEOs and business
+        owners to clients — to translate business needs into technical solutions that improve
+        operational efficiency, streamline workflows, and deliver measurable business value.
+      </p>
+      <div class="certs">
+        <h4 class="certs-label">Certifications</h4>
+        <!-- Certificate PDFs live in the "certs" folder next to this file. -->
+        <ul class="cert-list">
+          <li>
+            <svg class="cert-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M14 6.5a4 4 0 0 1 6.9 2.2A3.6 3.6 0 0 1 20 15.9a3.4 3.4 0 0 1-4.6 1.5A3.9 3.9 0 0 1 8 17.3a4.2 4.2 0 0 1-4.8-4.1 4.2 4.2 0 0 1 3-4A4.4 4.4 0 0 1 14 6.5z"/></svg>
+            <span>Salesforce Certified Platform Developer I <span class="cert-sub">(Expected 2026)</span></span>
+          </li>
+          <li>
+            <svg class="cert-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M14 6.5a4 4 0 0 1 6.9 2.2A3.6 3.6 0 0 1 20 15.9a3.4 3.4 0 0 1-4.6 1.5A3.9 3.9 0 0 1 8 17.3a4.2 4.2 0 0 1-4.8-4.1 4.2 4.2 0 0 1 3-4A4.4 4.4 0 0 1 14 6.5z"/></svg>
+            <a class="cert-link" href="certs/Shailesh_Admin.pdf" target="_blank" rel="noopener">Salesforce Certified Administrator <span class="view">View →</span></a>
+          </li>
+          <li>
+            <svg class="cert-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M14 6.5a4 4 0 0 1 6.9 2.2A3.6 3.6 0 0 1 20 15.9a3.4 3.4 0 0 1-4.6 1.5A3.9 3.9 0 0 1 8 17.3a4.2 4.2 0 0 1-4.8-4.1 4.2 4.2 0 0 1 3-4A4.4 4.4 0 0 1 14 6.5z"/></svg>
+            <a class="cert-link" href="certs/Shailesh_Plat_App_Builder%20(1).pdf" target="_blank" rel="noopener">Salesforce Certified Platform App Builder <span class="view">View →</span></a>
+          </li>
+          <li>
+            <svg class="cert-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 4 2 9l10 5 10-5-10-5z"/><path d="M6 11.3V16c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6v-4.7"/><path d="M22 9.2v5"/></svg>
+            <a class="cert-link" href="certs/HarvardEdx.pdf" target="_blank" rel="noopener">HarvardX Data Science Professional Certificate (8-course series) <span class="view">View →</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="cap-grid">
+        <div class="cap">
+          <div class="ic">{ }</div>
+          <h4>Integrations</h4>
+          <p>Secure webhooks, authenticated REST callouts, and third-party data sync (telephony, ads, spreadsheets).</p>
+        </div>
+        <div class="cap">
+          <div class="ic">▤</div>
+          <h4>Dashboards &amp; analytics</h4>
+          <p>Hand-built LWC dashboards with GraphQL data flow and from-scratch SVG/CSS charts.</p>
+        </div>
+        <div class="cap">
+          <div class="ic">⟲</div>
+          <h4>Automation &amp; pipelines</h4>
+          <p>Triggers, Batch Apex, and self-learning rules engines that cut manual work.</p>
+        </div>
+        <div class="cap">
+          <div class="ic">⌘</div>
+          <h4>Data modeling</h4>
+          <p>Custom objects, sharing-model design, and permission-gated workflows built to scale.</p>
+        </div>
+        <div class="cap">
+          <div class="ic">⚙</div>
+          <h4>Salesforce administration</h4>
+          <p>User management, security &amp; permission sets, validation rules, and data-quality initiatives.</p>
+        </div>
+        <div class="cap">
+          <div class="ic">◎</div>
+          <h4>Stakeholder consulting</h4>
+          <p>Gathering requirements directly from CEOs, owners, and clients — and translating business needs into technical solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK / PROJECTS ===================== -->
+  <section class="section" id="work">
+    <p class="eyebrow"><span class="num">02</span> / selected work</p>
+
+    <div class="filters" role="tablist" aria-label="Filter projects">
+      <button class="filter is-active" data-filter="all">All <span class="fcount"></span></button>
+      <button class="filter" data-filter="salesforce">Salesforce <span class="fcount"></span></button>
+      <button class="filter" data-filter="fullstack">Full-Stack <span class="fcount"></span></button>
+      <button class="filter" data-filter="automation">AI &amp; Automation <span class="fcount"></span></button>
+    </div>
+
+    <!-- 01 -->
+    <article class="proj" data-cat="automation" data-num="01">
+      <div class="proj-num">01</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>AI Lead Outreach Platform</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A Python-based AI outreach engine integrated with Salesforce and Agentforce that
+          automates customer engagement and follow-up, intelligently prioritizing and nurturing
+          leads. Contributed to a <b style="color:var(--text)">3&times; increase in qualified leads</b>.
+        </p>
+        <div class="tags">
+          <span class="tag key">Python</span><span class="tag key">Agentforce</span>
+          <span class="tag">Salesforce REST API</span><span class="tag">AI outreach</span>
+          <span class="tag">Automation</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">&#9654;</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/ai-outreach.png" alt="AI Lead Outreach screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li>Python service integrated with <b>Salesforce REST APIs</b> and <b>Agentforce</b> workflows to automate lead engagement and personalized follow-up.</li>
+              <li>Intelligent outreach and nurture sequencing that prioritized and re-engaged leads without manual effort.</li>
+              <li>Drove a <b>3&times; increase in qualified leads</b> through automated, timely follow-up.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="proj" data-cat="salesforce" data-num="02">
+      <div class="proj-num">02</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Marketing Attribution Platform</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A Salesforce-native system that automatically traces every phone call, web form,
+          and online lead back to the marketing channel that produced it — then shows leadership
+          a live dashboard and one-click PDF reports of exactly what each ad source costs
+          versus the revenue it generates.
+        </p>
+        <div class="tags">
+          <span class="tag key">Apex REST</span><span class="tag key">HMAC-SHA1</span>
+          <span class="tag">Trigger handler</span><span class="tag">Batch Apex</span>
+          <span class="tag">UI GraphQL API</span><span class="tag">Visualforce PDF</span>
+          <span class="tag">SVG charts</span><span class="tag">~6k-line LWC</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <div class="shot-grid" aria-label="Marketing attribution project screenshots">
+              <figure class="shot">
+                <img src="shots/marketing/Screenshot%202026-07-13%20183838.png" alt="Marketing attribution screenshot 1" onerror="this.closest('.shot').remove()" />
+                <figcaption>Marketing view 1</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="shots/marketing/Screenshot%202026-07-13%20183846.png" alt="Marketing attribution screenshot 2" onerror="this.closest('.shot').remove()" />
+                <figcaption>Marketing view 2</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="shots/marketing/Screenshot%202026-07-13%20183855.png" alt="Marketing attribution screenshot 3" onerror="this.closest('.shot').remove()" />
+                <figcaption>Marketing view 3</figcaption>
+              </figure>
+            </div>
+            <h5>Integrations</h5>
+            <ul>
+              <li>Inbound telephony webhook (<code>@RestResource urlMapping='/callrail/*'</code>) receiving call-completion POSTs.</li>
+              <li><b>Google Sheets API v4</b> callouts via Named Credential to blend pre-CRM historical sales into reporting.</li>
+              <li><b>Visualforce PDF</b> (<code>renderAs="pdf"</code>) generating five downloadable report types.</li>
+            </ul>
+            <h5>Apex engineering</h5>
+            <ul>
+              <li>Webhook security: <b>HMAC-SHA1 signature verification</b> with <b>constant-time comparison</b> to resist timing attacks, plus case-insensitive header fallback for a real-world quirk.</li>
+              <li>Idempotent <code>upsert</code> on an external id; dual typed/untyped JSON parsing to tolerate inconsistent third-party payloads.</li>
+              <li><b>Cross-channel attribution engine</b> unifying calls, web, and social leads into per-source ROI rollups — de-duplicating double-posts and folding repeat calls into a single lead.</li>
+              <li>Bulk-safe, <b>re-entrancy-guarded trigger</b> that phone-matches inbound calls to records across multiple number formats and stamps lead source without overwriting human-entered data.</li>
+            </ul>
+            <h5>Front end</h5>
+            <ul>
+              <li>~6,000-line LWC on the <b>UI GraphQL API</b> with reactive <code>@wire</code> flow and a client-side fallback so the board never blanks.</li>
+              <li><b>Hand-coded SVG</b> charts with hover tooltips; drill-down popups that reconcile exactly with the Apex aggregates.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="proj" data-cat="salesforce" data-num="03">
+      <div class="proj-num">03</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Expense Reconciliation System</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A Salesforce application that automates a multi-location company's monthly
+          corporate-card close: staff upload each statement and the system parses,
+          categorizes, and auto-approves routine charges — learning from past decisions
+          so each month needs less manual work — while flagging price changes and unusual
+          charges for review.
+        </p>
+        <div class="tags">
+          <span class="tag key">Self-learning rules</span><span class="tag key">Regex engine</span>
+          <span class="tag">8 custom objects</span><span class="tag">Client-side CSV parser</span>
+          <span class="tag">Permission-gated</span><span class="tag">18-method test suite</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/expense.png" alt="Expense Reconciliation screenshot" onerror="this.remove()" />
+            <h5>Apex engineering</h5>
+            <ul>
+              <li><b>Regex-based merchant-normalization engine</b> collapsing noisy card descriptors (stacked processor prefixes, order-ref tails, sub-products) into stable vendor keys for reliable grouping.</li>
+              <li><b>Self-learning auto-categorization + auto-approval:</b> approving a charge trains a per-vendor rule profile, so later statements clear recurring charges automatically and surface only anomalies.</li>
+              <li><b>Per-cardholder price-change detection</b> (exact descriptor + cardholder key, tolerance + % delta) plus month-over-month tracking to catch subscription price creep.</li>
+              <li>Aggregate-SOQL dashboards and a <b>"human-review-volume" KPI</b> quantifying the automation's improvement month over month; append-only audit log; permission-gated admin actions.</li>
+            </ul>
+            <h5>Front end</h5>
+            <ul>
+              <li><b>Quote-aware CSV parser and fuzzy column-mapper written entirely in the browser</b>, staging rows client-side before a single bulkified Apex import.</li>
+              <li>View-router mega-component (review → accounting → final → disputes → insights → audit) with a vendor-grouped queue, sticky ordering, bulk approve, and auto-advance.</li>
+            </ul>
+            <h5>Testing</h5>
+            <ul>
+              <li>18-method Apex suite including a <b>3-month behavioral test</b> proving the learn → auto-approve → price-flag lifecycle end to end.</li>
+            </ul>
+            <p class="note">Functional core; import, learning, review, accounting, disputes, and audit are implemented and test-covered. Later phases planned.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="proj" data-cat="fullstack" data-num="04">
+      <div class="proj-num">04</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Electronic Medical Records (EMR) Platform</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A custom EMR platform built from the ground up for a healthcare consulting firm —
+          managing patient records, scheduling, clinical documentation, and post-operative
+          care workflows for physicians, nurses, and billing staff.
+        </p>
+        <div class="tags">
+          <span class="tag key">React.js</span><span class="tag key">Python</span>
+          <span class="tag key">Firebase</span><span class="tag">REST APIs</span>
+          <span class="tag">Firestore</span><span class="tag">HTML/CSS</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <div class="shot-grid" aria-label="EMR project screenshots">
+              <figure class="shot">
+                <img src="shots/emr/emr1.png" alt="EMR dashboard overview screenshot" onerror="this.closest('.shot').remove()" />
+                <figcaption>Dashboard overview</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="shots/emr/emr2.png" alt="EMR patient records screenshot" onerror="this.closest('.shot').remove()" />
+                <figcaption>Patient records</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="shots/emr/emr3.png" alt="EMR scheduling screenshot" onerror="this.closest('.shot').remove()" />
+                <figcaption>Scheduling</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="shots/emr/emr4.png" alt="EMR clinical workflow screenshot" onerror="this.closest('.shot').remove()" />
+                <figcaption>Clinical workflow</figcaption>
+              </figure>
+            </div>
+            <h5>Engineering</h5>
+            <ul>
+              <li>Architected a full-stack platform (React.js front end, Python + Firebase back end) for patient management, scheduling, insurance verification, and clinical workflows.</li>
+              <li>Built secure REST API integrations and Firestore data models with security rules for authentication, real-time sync, and protected patient information.</li>
+              <li>Integrated third-party healthcare systems — <b>Tebra</b> and <b>Office Ally</b> — to automate insurance eligibility, claims processing, referrals, and billing.</li>
+              <li>Also stood up the organization's Salesforce environment from scratch (custom objects, Flow automations, roles, and dashboards) alongside the EMR.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="proj" data-cat="salesforce" data-num="05">
+      <div class="proj-num">05</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Salesforce CRM Implementation</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A Salesforce CRM built from the ground up for a boutique travel agency — partnering
+          directly with the owners and executives to model clients, bookings, and sales records
+          and improve lead tracking and customer relationship management.
+        </p>
+        <div class="tags">
+          <span class="tag key">Salesforce CRM</span><span class="tag">Custom Objects</span>
+          <span class="tag">Reports &amp; Dashboards</span><span class="tag">Data modeling</span>
+          <span class="tag">Power BI</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/crm.png" alt="Salesforce CRM screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li>Partnered directly with the company's owners and executives to translate their sales process into Salesforce objects, fields, and workflows.</li>
+              <li>Designed and configured the org from the ground up — custom objects, page layouts, and reports tailored to a travel-agency sales process.</li>
+              <li>Migrated and organized client and sales records to strengthen lead tracking and customer relationship management.</li>
+              <li>Complemented CRM reporting with Power BI financial dashboards visualizing revenue, cost, and profitability trends.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="proj" data-cat="salesforce" data-num="06">
+      <div class="proj-num">06</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Call Center Analytics Suite</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A live "mission-control" dashboard that pulls every phone call, web/social lead,
+          and sales appointment into one screen — so managers can see who called, whether
+          missed calls were returned, which campaigns are working, and how many calls turned
+          into booked appointments.
+        </p>
+        <div class="tags">
+          <span class="tag key">UI GraphQL API</span><span class="tag">6 Apex controllers</span>
+          <span class="tag">Multi-source dedup</span><span class="tag">Business-day logic</span>
+          <span class="tag">Sharing-model design</span><span class="tag">Live auto-refresh</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/call-center/Screenshot%202026-07-13%20183920.png" alt="Call Center screenshot" onerror="this.remove()" />
+            <h5>Apex engineering</h5>
+            <ul>
+              <li><b>Client-side analytics engine</b> person-keying calls by normalized phone → contact → account, then aggregating campaign mix, outcomes, and conversion across thousands of records without server round-trips.</li>
+              <li>Multi-source de-duplication collapsing double-logged phone-system tasks and repeat webhook events; a rule-based classifier categorizing inbound calls by transcript keywords.</li>
+              <li><b>Business-day windowing</b> in Apex (weekend-skipping) for a rolling lead-aging model.</li>
+              <li>Deliberate <code>with sharing</code>/<code>without sharing</code> split so operational reads are a shared team view while privileged writes run in system context.</li>
+            </ul>
+            <h5>Front end</h5>
+            <ul>
+              <li>Analytics board on <b>GraphQL wires</b> over a reactive time window, with six clickable drill-down KPI cards and pure-CSS charts.</li>
+              <li>Rep worklist with <b>60-second auto-refresh gated on tab visibility</b> and inline record updates via <code>uiRecordApi</code>.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="proj" data-cat="salesforce" data-num="07">
+      <div class="proj-num">07</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Sales, ROI &amp; Executive Dashboards</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A suite of four dashboards that turn sales, marketing, phone-call, and installation
+          data into live, interactive scorecards — giving reps, managers, and executives a
+          single real-time view of leads, revenue, return on ad spend, and job progress.
+        </p>
+        <div class="tags">
+          <span class="tag key">Levenshtein dedup</span><span class="tag">Shared Apex service</span>
+          <span class="tag">Google Sheets API</span><span class="tag">SVG + calendar UI</span>
+          <span class="tag">Role-aware scoping</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/dashboards.png" alt="Dashboards screenshot" onerror="this.remove()" />
+            <h5>The four dashboards</h5>
+            <ul>
+              <li><b>Sales</b> — rep funnel, KPI cards, trend chart, revenue donut, appointment map; live-CRM, CSV, and hybrid data modes.</li>
+              <li><b>Home Sales</b> — per-user pipeline with e-signature status, commission calc, and a job-research trace.</li>
+              <li><b>ROI</b> — cross-functional ROAS view composing marketing, call-tracker, and sales feeds with a day-drilldown calendar.</li>
+              <li><b>Executive</b> — company-wide week-over-week scorecard across every department.</li>
+            </ul>
+            <h5>Apex engineering</h5>
+            <ul>
+              <li>Single <code>cacheable=true</code> endpoint running three bounded aggregate-SOQL passes, reduced in-memory into per-rep and company totals — the LWCs run zero SOQL themselves.</li>
+              <li><b>Dual date-attribution logic</b> reconciling "sold in period" vs. "sold from leads created in period," matching finance/marketing definitions.</li>
+              <li>Google Sheets v4 callout with a hand-written Apex CSV parser to blend years of pre-CRM history behind one date control.</li>
+            </ul>
+            <h5>Front end</h5>
+            <ul>
+              <li><b>Levenshtein-distance fuzzy matcher</b> merging spreadsheet history with live CRM records across a cutover date without double-counting.</li>
+              <li>All charts hand-built in SVG/CSS — line charts, conic-gradient donut, funnel bars, and a click-to-filter calendar. No charting library.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="proj" data-cat="salesforce" data-num="08">
+      <div class="proj-num">08</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Lead Intake &amp; Routing Suite</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          Custom interfaces that let a sales team capture new leads with real-time address
+          lookup and manage their pipeline through a drag-and-drop board — streamlining how
+          inbound inquiries move from first contact to sale.
+        </p>
+        <div class="tags">
+          <span class="tag key">Optimistic UI</span><span class="tag">Debounced autocomplete</span>
+          <span class="tag">Drag &amp; drop Kanban</span><span class="tag">Reusable @api component</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/lead-intake.png" alt="Lead Intake screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li><b>Debounced (250ms) address autocomplete</b> backed by an Apex geocoding service, with a monotonic request-id guard to discard stale responses — only firing once the query looks like a real address.</li>
+              <li><b>Optimistic drag-and-drop Kanban</b> (native HTML5 DnD): stage moves apply locally, reconcile with the Apex result, and roll back on error.</li>
+              <li>Reusable form component exposing ~11 <code>@api</code> prefill setters, embedded and pre-populated by a lead-to-account quick action.</li>
+              <li>Client-side phone normalization and conditional validation.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="proj" data-cat="salesforce" data-num="09">
+      <div class="proj-num">09</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Social Lead Ads Processor</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A server-side engine that turns paid social advertising leads into CRM customer
+          records, intelligently matching each new lead against existing contacts to avoid
+          duplicates and handling historical records through bulk processing.
+        </p>
+        <div class="tags">
+          <span class="tag key">Batch Apex</span><span class="tag">Partial-success DML</span>
+          <span class="tag">Dedup bundle engine</span><span class="tag">Fault-injection tests</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/social-leads.png" alt="Social Lead Ads screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li>Runs both <b>trigger-driven (real-time) and as a <code>Database.Batchable</code> backfill</b>, sharing one entry point so both paths produce identical results.</li>
+              <li>Fully <b>partial-success DML</b> with per-record <code>SaveResult</code> inspection so one bad row never fails the batch.</li>
+              <li><b>Bundle/dedup architecture:</b> leads group by matched-contact → normalized email → normalized phone → id, collapsing multiple rows for one person into a single record set.</li>
+              <li>Non-destructive updates, static idempotency guard, and <code>@TestVisible</code> fault-injection hooks to unit-test each DML failure path.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="proj" data-cat="salesforce" data-num="10">
+      <div class="proj-num">10</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Appointment Sync Service</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A Salesforce automation that keeps sales appointments in sync with their parent
+          opportunity, so quantities and notes stay consistent across records without manual
+          re-entry — part of a broader appointment/calendar automation.
+        </p>
+        <div class="tags">
+          <span class="tag key">Change-detection</span><span class="tag">Trigger service</span>
+          <span class="tag">Bulk-safe</span><span class="tag">Before-save drafts</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/appointment-sync.png" alt="Appointment Sync screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li>Two entry points: an opportunity-side sync (queries related appointments and updates them) and an appointment-side before-save draft mutation (no DML).</li>
+              <li><b>Change-detection short-circuit</b> comparing old/new values so unchanged records skip all queries and DML entirely.</li>
+              <li>Field-level dirty checking, bulk-safe single DML, and defensive parsing that returns null on bad data rather than throwing.</li>
+            </ul>
+            <p class="note">Handles in-org record sync; the external-calendar push is a separate permission-gated component.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="proj" data-cat="salesforce" data-num="11">
+      <div class="proj-num">11</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Co-op Marketing Automation</h3>
+          <span class="badge proto">Prototype</span>
+        </div>
+        <p class="scope">
+          A document-automation workbench that guides staff through preparing advertising-reimbursement
+          claim packages — validating uploads, generating AI-assisted correction drafts, and enforcing
+          an approval workflow before submission to a vendor portal.
+        </p>
+        <div class="tags">
+          <span class="tag key">Workflow state machine</span><span class="tag">Template config engine</span>
+          <span class="tag">Dynamic prompt gen</span><span class="tag">Client-side file handling</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/coop.png" alt="Co-op Marketing screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li><b>Template-driven config engine:</b> 14 document templates, each defining replacement rows, per-document math rules, and strict guardrails, grouped into invoice and ad-page workflows.</li>
+              <li><b>Dynamic prompt generation</b> composing a detailed instruction set from the template's rules plus the user's edits, with an override path.</li>
+              <li>Per-document <b>state machine</b> (draft → generating → review → approved) with a sequential queue runner; editing any value auto-resets stale approvals, and submission is gated on every document being approved.</li>
+              <li>Client-side file handling (type + size validation, base64 preview) and a live JSON payload preview built for the eventual portal POST.</li>
+            </ul>
+            <p class="note">Front-end + workflow engine complete; the vendor-portal callout and AI generation step are architected and scaffolded, not yet wired to live endpoints.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- 12 -->
+    <article class="proj" data-cat="fullstack" data-num="12">
+      <div class="proj-num">12</div>
+      <div class="proj-main">
+        <div class="proj-top">
+          <h3>Travel Management Platform</h3>
+          <span class="badge live">In production</span>
+        </div>
+        <p class="scope">
+          A full-stack web platform for a cloud-based travel-management company — enabling
+          real-time flight and hotel search with a clean, responsive booking interface,
+          built end to end in partnership with the company's owners.
+        </p>
+        <div class="tags">
+          <span class="tag key">React.js</span><span class="tag key">Python</span>
+          <span class="tag key">Flask</span><span class="tag">SQL</span>
+          <span class="tag">MongoDB</span><span class="tag">GDS APIs (XML/JSON)</span>
+        </div>
+        <details class="tech">
+          <summary><span class="arrow">▶</span> Technical details</summary>
+          <div class="tech-body">
+            <img class="proj-shot" src="shots/traform.png" alt="Travel Platform screenshot" onerror="this.remove()" />
+            <h5>Engineering</h5>
+            <ul>
+              <li>Built scalable backend services in <b>Python/Flask</b> with a reusable architecture to speed up development.</li>
+              <li>Integrated <b>SQL and MongoDB</b> to manage both structured and unstructured booking and travel records.</li>
+              <li>Connected <b>Global Distribution System (GDS) APIs</b> over XML/JSON for real-time flight and hotel search.</li>
+              <li>Developed a responsive <b>React.js</b> UI and partnered directly with the owners to deliver the full-stack platform.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <button class="show-more" id="showMore"></button>
+
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section" id="experience">
+    <p class="eyebrow"><span class="num">03</span> / experience</p>
+    <div class="xp">
+      <div class="xp-item">
+        <p class="xp-role">Salesforce &amp; Automation Developer</p>
+        <p class="xp-meta">Sivan Windows and Doors · Northridge, CA · Dec 2025 – Present</p>
+        <ul>
+          <li>Sole developer of the org's custom Salesforce solutions — Apex, LWC, Flow, and JavaScript — automating business processes across sales, operations, and finance.</li>
+          <li>Built company-wide dashboards and automated workflows giving leadership real-time visibility into sales performance, lead pipelines, and operational KPIs.</li>
+          <li>Engineered a Python + Agentforce AI lead-outreach platform integrated with Salesforce APIs, contributing to a 3× increase in qualified leads.</li>
+        </ul>
+        <div class="tags"><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">JavaScript</span><span class="tag">Flow Builder</span><span class="tag">SOQL</span><span class="tag">Python</span><span class="tag">REST APIs</span></div>
+      </div>
+      <div class="xp-item">
+        <p class="xp-role">Software Developer</p>
+        <p class="xp-meta">S&amp;S Healthcare Consulting · Los Angeles, CA · Jan 2024 – Dec 2025</p>
+        <ul>
+          <li>Architected a custom Electronic Medical Records (EMR) platform from the ground up using React.js, Python, Firebase, and REST APIs.</li>
+          <li>Stood up the organization's Salesforce environment end-to-end and integrated third-party healthcare systems (Tebra, Office Ally) to automate eligibility, claims, and billing.</li>
+        </ul>
+        <div class="tags"><span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Firebase</span><span class="tag">REST APIs</span><span class="tag">Salesforce</span><span class="tag">HTML/CSS</span></div>
+      </div>
+      <div class="xp-item">
+        <p class="xp-role">Database Administrator</p>
+        <p class="xp-meta">Expert Travel Associates · Encino, CA · May 2019 – Dec 2023</p>
+        <ul>
+          <li>Streamlined sales and expense data with QuickBooks, Excel, and Power BI; built financial dashboards visualizing revenue, cost, and profitability.</li>
+          <li>Organized client and sales records in Salesforce CRM and automated booking-data pipelines via TRAMS software.</li>
+        </ul>
+        <div class="tags"><span class="tag">Salesforce</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="xp-item">
+        <p class="xp-role">Front-End &amp; Back-End Developer</p>
+        <p class="xp-meta">Traform Inc. · San Francisco, CA · Jun 2020 – Aug 2022</p>
+        <ul>
+          <li>Built scalable Flask/Python backend services and integrated SQL and MongoDB for booking and travel data.</li>
+          <li>Developed a responsive React.js UI and connected Global Distribution System (GDS) APIs (XML/JSON) for real-time flight and hotel search.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">XML/JSON</span></div>
+      </div>
+      <!-- Add more <div class="xp-item"> ... </div> blocks as needed -->
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section" id="education">
+    <p class="eyebrow"><span class="num">04</span> / education</p>
+    <div class="xp">
+      <div class="xp-item">
+        <p class="xp-role">B.S. in Electrical &amp; Computer Engineering</p>
+        <p class="xp-meta">California State University, Northridge &nbsp;·&nbsp; <a class="doc-link" href="certs/Shailesh_Diploma.pdf" target="_blank" rel="noopener">View diploma →</a></p>
+        <ul>
+          <li>Relevant coursework: Microprocessor Systems, Probabilities for Engineers.</li>
+          <li>Focus: C++, Python, MATLAB.</li>
+        </ul>
+      </div>
+      <div class="xp-item">
+        <p class="xp-role">Computer Engineering Coursework</p>
+        <p class="xp-meta">California Polytechnic State University, San Luis Obispo</p>
+        <ul>
+          <li>Relevant coursework: Introduction to Data Science, Object-Oriented Programming, Fundamentals of Computer Science.</li>
+          <li>Focus: Python, SQL, C++, Java.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOOLBOX ===================== -->
+  <section class="section" id="toolbox">
+    <p class="eyebrow"><span class="num">05</span> / toolbox</p>
+    <div class="logos">
+      <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6.5a4 4 0 0 1 6.9 2.2A3.6 3.6 0 0 1 20 15.9a3.4 3.4 0 0 1-4.6 1.5A3.9 3.9 0 0 1 8 17.3a4.2 4.2 0 0 1-4.8-4.1 4.2 4.2 0 0 1 3-4A4.4 4.4 0 0 1 14 6.5z"/></svg>Salesforce</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>Apex</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>LWC</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><text x="12" y="16" font-family="monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">JS</text></svg>JavaScript</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><text x="12" y="16" font-family="monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">Py</text></svg>Python</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.3"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(120 12 12)"/></svg>React</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>SQL</span>
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="9" r="2.4"/><path d="M6 8.4v7.2M18 11.4c0 3-4 2.4-6 4.6"/></svg>Git</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h4>Languages</h4>
+        <div class="chips">
+          <span class="chip">Apex</span><span class="chip">Python</span>
+          <span class="chip">JavaScript (ES6+)</span><span class="chip">SQL</span>
+          <span class="chip">SOQL</span><span class="chip">C++</span>
+          <span class="chip">Java</span><span class="chip">HTML5</span>
+          <span class="chip">CSS3</span><span class="chip">GraphQL</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h4>Salesforce platform</h4>
+        <div class="chips">
+          <span class="chip">Lightning Web Components</span><span class="chip">Flow Builder</span>
+          <span class="chip">Agentforce</span><span class="chip">Apex REST</span>
+          <span class="chip">Apex Triggers</span><span class="chip">Batch Apex</span>
+          <span class="chip">Visualforce (PDF)</span><span class="chip">Named Credentials</span>
+          <span class="chip">Custom Objects</span><span class="chip">Permission Sets</span>
+          <span class="chip">uiRecordApi</span><span class="chip">UI GraphQL API</span>
+          <span class="chip">Salesforce Files</span><span class="chip">Apex Tests</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h4>Integrations</h4>
+        <div class="chips">
+          <span class="chip">Telephony webhooks</span><span class="chip">Google Sheets API v4</span>
+          <span class="chip">Paid-social lead ads</span><span class="chip">E-signature (docs)</span>
+          <span class="chip">Geocoding</span><span class="chip">Managed packages</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h4>Practices</h4>
+        <div class="chips">
+          <span class="chip">Bulkified DML</span><span class="chip">Governor-limit safe</span>
+          <span class="chip">HMAC verification</span><span class="chip">Aggregate SOQL</span>
+          <span class="chip">Trigger handler pattern</span><span class="chip">Unit testing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section" id="contact">
+    <p class="eyebrow"><span class="num">06</span> / contact</p>
+    <div class="contact-card">
+      <h3>Let's connect.</h3>
+      <p>I'm actively looking for new opportunities as a Salesforce Developer &amp; Full-Stack Engineer. If you're hiring — or just want to connect — I'd love to hear from you. Email is the fastest way to reach me.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="mailto:s.alagan@outlook.com">s.alagan@outlook.com</a>
+        <a class="cta" href="https://www.linkedin.com/in/shailesh-alagan" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="cta" href="https://github.com/shailesh120" target="_blank" rel="noopener">GitHub</a>
+        <a class="cta" href="https://www.salesforce.com/trailblazer/shaileshalagan" target="_blank" rel="noopener">Trailhead ↗</a>
+        <a class="cta" href="Shailesh_Alagan_Resume_Job.pdf" target="_blank" rel="noopener">Résumé ↓</a>
+        <a class="cta" href="tel:8186026923">818-602-6923</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="progress" id="progress"></div>
+<button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Expanded image preview">
+  <button class="modal-close" id="modalClose" type="button" aria-label="Close image preview">&times;</button>
+  <figure class="modal-frame">
+    <img id="modalImage" alt="" />
+    <figcaption id="modalCaption"></figcaption>
+  </figure>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fi">
+      <span>© <span id="year"></span> Shailesh Alagan</span>
+      <span>Built by hand · Apex &amp; LWC</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    var icon = document.getElementById('themeIcon');
+
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      icon.textContent = theme === 'dark' ? '☀' : '☾';
+    }
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var initial = stored || (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    apply(initial);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    var els = document.querySelectorAll('.section, .proj');
+    els.forEach(function (el) { el.classList.add('reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    // Expand all technical panels when printing / saving to PDF
+    var reopened = [];
+    window.addEventListener('beforeprint', function () {
+      reopened = [];
+      document.querySelectorAll('details.tech:not([open])').forEach(function (d) {
+        d.setAttribute('open', ''); reopened.push(d);
+      });
+    });
+    window.addEventListener('afterprint', function () {
+      reopened.forEach(function (d) { d.removeAttribute('open'); });
+      reopened = [];
+    });
+
+    // Project category filter + "show more" cap
+    var projects = Array.prototype.slice.call(document.querySelectorAll('.proj'));
+    var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+    var moreBtn = document.getElementById('showMore');
+    var LIMIT = 5, expanded = false, currentFilter = 'all';
+    function matches(p, f) { return f === 'all' || (p.getAttribute('data-cat') || '').split(' ').indexOf(f) > -1; }
+    filterBtns.forEach(function (btn) {
+      var f = btn.getAttribute('data-filter');
+      var n = projects.filter(function (p) { return matches(p, f); }).length;
+      var c = btn.querySelector('.fcount'); if (c) c.textContent = n;
+    });
+    function render() {
+      var matched = 0, shown = 0;
+      projects.forEach(function (p) {
+        if (!matches(p, currentFilter)) { p.style.display = 'none'; return; }
+        matched++;
+        var show = expanded || matched <= LIMIT;
+        p.style.display = show ? '' : 'none';
+        if (show) {
+          shown++; p.classList.add('in');
+          var num = p.querySelector('.proj-num'); if (num) num.textContent = ('0' + shown).slice(-2);
+        }
+      });
+      if (moreBtn) {
+        if (matched > LIMIT) {
+          moreBtn.style.display = '';
+          moreBtn.textContent = expanded ? '– Show fewer' : '+ Show all ' + matched + ' projects';
+        } else {
+          moreBtn.style.display = 'none';
+        }
+      }
+    }
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        currentFilter = btn.getAttribute('data-filter');
+        expanded = false;
+        render();
+      });
+    });
+    if (moreBtn) moreBtn.addEventListener('click', function () { expanded = !expanded; render(); });
+    render();
+
+    // Scroll progress bar + back-to-top button
+    var progress = document.getElementById('progress');
+    var toTop = document.getElementById('toTop');
+    function onScroll() {
+      var st = window.scrollY || document.documentElement.scrollTop;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (progress) progress.style.width = (h > 0 ? (st / h * 100) : 0) + '%';
+      if (toTop) { if (st > 400) toTop.classList.add('show'); else toTop.classList.remove('show'); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (toTop) toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    // Click any portfolio image to inspect it in a modal
+    var imageModal = document.getElementById('imageModal');
+    var modalImage = document.getElementById('modalImage');
+    var modalCaption = document.getElementById('modalCaption');
+    var modalClose = document.getElementById('modalClose');
+    var lastFocused = null;
+    function getImageCaption(img) {
+      var figure = img.closest ? img.closest('figure') : null;
+      var caption = figure ? figure.querySelector('figcaption') : null;
+      return caption ? caption.textContent.trim() : (img.alt || '');
+    }
+    function openImageModal(img) {
+      if (!imageModal || !modalImage) return;
+      lastFocused = document.activeElement;
+      modalImage.src = img.currentSrc || img.src;
+      modalImage.alt = img.alt || '';
+      if (modalCaption) {
+        modalCaption.textContent = getImageCaption(img);
+        modalCaption.style.display = modalCaption.textContent ? '' : 'none';
+      }
+      imageModal.classList.add('is-open');
+      imageModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      if (modalClose) modalClose.focus({ preventScroll: true });
+    }
+    function closeImageModal() {
+      if (!imageModal || !modalImage) return;
+      imageModal.classList.remove('is-open');
+      imageModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      modalImage.removeAttribute('src');
+      if (lastFocused && lastFocused.focus) lastFocused.focus({ preventScroll: true });
+    }
+    document.addEventListener('click', function (e) {
+      var img = e.target.closest ? e.target.closest('.tech-body img, .hero-photo img') : null;
+      if (!img || !img.complete || img.naturalWidth === 0) return;
+      openImageModal(img);
+    });
+    if (imageModal) {
+      imageModal.addEventListener('click', function (e) {
+        if (e.target === imageModal) closeImageModal();
+      });
+    }
+    if (modalClose) modalClose.addEventListener('click', closeImageModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && imageModal && imageModal.classList.contains('is-open')) closeImageModal();
+    });
+
+    // Active-section highlighting in the nav
+    var navMap = {};
+    document.querySelectorAll('.nav a').forEach(function (a) {
+      var id = a.getAttribute('href');
+      if (id && id.charAt(0) === '#') navMap[id.slice(1)] = a;
+    });
+    var navSections = document.querySelectorAll('section[id]');
+    if ('IntersectionObserver' in window && navSections.length) {
+      var navIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && navMap[e.target.id]) {
+            Object.keys(navMap).forEach(function (k) { navMap[k].classList.remove('active'); });
+            navMap[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      navSections.forEach(function (s) { if (navMap[s.id]) navIo.observe(s); });
+    }
+  })();
+</script>
+
+</body>
+</html>
