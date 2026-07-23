@@ -98,7 +98,10 @@ customer data first.
   Electronic Medical Records (EMR) ..... shots/emr/emr2.png
   Electronic Medical Records (EMR) ..... shots/emr/emr3.png
   Electronic Medical Records (EMR) ..... shots/emr/emr4.png
-  Salesforce CRM Implementation ........ shots/crm.png
+  Salesforce CRM Implementation ........ shots/crm/crm1.png
+  Salesforce CRM Implementation ........ shots/crm/crm2.png
+  Salesforce CRM Implementation ........ shots/crm/crm3.png
+  Salesforce CRM Implementation ........ shots/crm/crm4.png
   Call Center Analytics ................ shots/call-center.png
   Sales / ROI / Executive Dashboards ... shots/dashboards.png
   Lead Intake & Routing ................ shots/lead-intake.png
