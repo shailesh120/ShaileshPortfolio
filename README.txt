@@ -1,6 +1,10 @@
 ========================================================================
-  SHAILESH ALAGAN - PORTFOLIO WEBSITE
+  SHAILESH ALAGAN - PORTFOLIO WEBSITE  (maintenance notes)
 ========================================================================
+
+MAINTENANCE DOC. For the portfolio overview - projects, skills, and the
+live link - see README.md. This file covers how to update the site:
+filenames, where files go, and how to deploy.
 
 A single, self-contained personal portfolio site. Everything (styles,
 scripts, icons) lives inside index.html - no build step, no installs.
